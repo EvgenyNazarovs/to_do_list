@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>TO-DO LIST</title>
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in items">
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+
+    <form v-on:submit.prevent="saveNewItem">
+      <label for="new-item">Add a new to-do item:</label>
+      <input type="text" id="new-item" v-model="newItem">
+      <input type="submit" value="Save New Item">
+    </form>
+  </div>
 
 </body>
 </html>
