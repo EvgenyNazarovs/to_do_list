@@ -12,13 +12,20 @@
   <div id="app">
     <ul>
       <li v-for="(item, index) in items">
-        <span>{{ item }}</span>
+        <span>{{ item.name }}</span>
+        <span>{{ item.priority }}</span>
       </li>
     </ul>
 
     <form v-on:submit.prevent="saveNewItem">
       <label for="new-item">Add a new to-do item:</label>
-      <input type="text" id="new-item" v-model="newItem">
+      <input type="text" id="new-item" v-model="newItem.name">
+      <input type="radio" id="new-item" v-model="newItem.priority" value="!!!">
+      <label for="!!!">!!!</label>
+      <input type="radio" id="new-item" v-model="newItem.priority" value="!!">
+      <label for="!!">!!</label>
+      <input type="radio" id="new-item" v-model="newItem.priority" value="!">
+      <label for="!">!</label>
       <input type="submit" value="Save New Item">
     </form>
   </div>
