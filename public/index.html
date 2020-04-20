@@ -11,9 +11,9 @@
 <body>
   <div id="app">
     <ul>
-      <li v-for="(item, index) in items">
+      <li v-for="(item, index) in items" v-bind:class="isHighPriority(item) ? 'highPriority' : 'nonPriority'">
         <span>{{ item.name }}</span>
-        <span>{{ item.priority }}</span>
+        <span id="priority">{{ item.priority }}</span>
       </li>
     </ul>
 

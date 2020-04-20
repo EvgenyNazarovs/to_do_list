@@ -19,7 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         this.items.push(itemToAdd);
         this.newItem = {}
-      }
+      },
+      isHighPriority: function(item){
+        return item.priority === "!!!" ? true : false
+    }
+      // // isHighPriority: function(index){
+      // //   return this.items[index].priority === "!!!" ? true : false
+      // }
     }
   });
 });
